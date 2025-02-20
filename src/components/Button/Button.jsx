@@ -1,19 +1,14 @@
-import { useState } from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ disable, type, children }) => {
-	const [count, setCount] = useState(0);
-
+const Button = ({ disable, type, onClick, children }) => {
 	return (
 		<button
 			className={styles.button}
 			disabled={disable}
 			type={type}
-			onClick={() => setCount(count + 1)}
+			onClick={onClick}
 		>
-			<span className={styles.buttonInner}>
-				{children} + {count}
-			</span>
+			<span className={styles.buttonInner}>{children}</span>
 		</button>
 	);
 };

@@ -1,10 +1,16 @@
+import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button/Button";
+import Display from "./components/Display/Display";
 
 function App() {
+	const [count, setCount] = useState(0);
+
 	return (
 		<>
-			<Button disable={false} type="button">
+			<Display count={count}>Count</Display>
+			<br />
+			<Button disable={false} type="button" onClick={() => setCount(count + 1)}>
 				<span>ボタン</span>
 			</Button>
 		</>
