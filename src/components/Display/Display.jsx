@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
 import styles from "./Display.module.css";
 
-const Display = ({ count, children }) => {
+const Display = ({ count }) => {
+	const [text, setText] = useState("...Loading");
+
+	useEffect(() => {
+		setTimeout(() => {
+			setText("Count: ");
+		}, 1000);
+	}, []);
+
 	return (
 		<div className={styles.display}>
-			{children} + {count}
+			{text} + {count}
 		</div>
 	);
 };

@@ -8,7 +8,7 @@ function App() {
 
 	return (
 		<>
-			<Display count={count}>Count</Display>
+			<Display count={count} />
 			<br />
 			<Button disable={false} type="button" onClick={() => setCount(count + 1)}>
 				<span>ボタン</span>
